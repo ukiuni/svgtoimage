@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Pane: Input -->
+        <div class="pane left-pane glass">
+            <div class="pane-header">
+                <h2>SVG Input</h2>
+            </div>
+            <div class="pane-content">
+                <div class="upload-area" id="drop-zone">
+                    <input type="file" id="file-input" accept=".svg" hidden>
+                    <button class="btn secondary" onclick="document.getElementById('file-input').click()">Upload SVG</button>
+                    <p>or drop file here</p>
+                </div>
+                <div class="divider"><span>OR</span></div>
+                <textarea id="svg-input-text" placeholder="Paste SVG code here..."></textarea>
+                <div class="preview-area" id="svg-preview-container">
+                    <!-- SVG will be rendered here -->
+                    <div class="placeholder-text">SVG Preview</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Pane: Controls -->
+        <div class="pane center-pane glass">
+            <div class="controls">
+                <div class="arrow-icon">➔</div>
+                <button id="btn-convert-png" class="btn primary">Convert to PNG</button>
+                <button id="btn-convert-jpeg" class="btn primary">Convert to JPEG</button>
+            </div>
+        </div>
+
+        <!-- Right Pane: Output -->
+        <div class="pane right-pane glass">
+            <div class="pane-header">
+                <h2>Image Output</h2>
+            </div>
+            <div class="pane-content">
+                <div class="image-preview-area" id="image-output-container">
+                    <div class="placeholder-text">Converted Image</div>
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-download" class="btn secondary" disabled>Download</button>
+                    <button id="btn-copy" class="btn secondary" disabled>Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
